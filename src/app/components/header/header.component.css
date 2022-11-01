@@ -1,7 +1,7 @@
 div{
     background-color: rgb(51, 156, 188);
     color: aliceblue;
-    box-shadow: 0 0 45px rgb(241, 217, 123);
+    /* box-shadow: 0 0 45px rgb(241, 217, 123); */
     text-align: center;
     padding: 25px 0;
 }
@@ -11,4 +11,11 @@ h1{
     font-size: 44px;
     text-transform: uppercase;
     background-color: rgb(51, 156, 188);
+}
+
+button{
+    background-color: rgb(51, 156, 188);
+    font-size: 35px;
+    border: none;
+    color: #ffffff;
 }

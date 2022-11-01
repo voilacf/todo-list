@@ -30,11 +30,15 @@ export class TodosComponent implements OnInit {
   }
 
   addTodo (){
-    this.todos.push({
-      content: this.inputTodo,
-      completed: false
-    });
-    this.inputTodo = "";
+    if(this.inputTodo === ""){
+      alert('Please enter text');
+    }else{
+      this.todos.push({
+        content: this.inputTodo,
+        completed: false
+      });
+      this.inputTodo = "";
+    }
   }
 
 }

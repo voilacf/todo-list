@@ -1,23 +1,39 @@
-.todo{
+ .todo .id{
+    flex: 1 1 75px;
+    margin: auto 15px;
+ }
+ .todo .content{
+    flex: 1 1 100%;
+    margin: auto;
+ }
+ .todo{
+    font-size: 20px;
     display: flex;
-    padding: 10px 15px;
     background-color: #fff;
     border-bottom: 1px solid #ddd;
+    height: 35px;
+ }
+ .todo.done .content{
+    text-decoration: line-through;
 }
-.todo:nth-child(even){
+ .todo:nth-child(even) .content, .todo:nth-child(even), .todo:nth-child(even) .id{
     background-color: #eee;
-}
+ }
 .todo:last-of-type{
     border-bottom: 0;
 }
-.todo .id{
-    flex: 1 1 50px;
+button.delete{
+    font-size: 16px;
+    margin: auto 25px;
+    height: 20px;
+    border: #fff;
+    border-radius: 5px;
+    width: 100px;
+    border: 1px solid #aaa;
 }
-.todo .content{
-    flex: 1 1 100%;
-}
-.todo.done .content{
-    text-decoration: line-through;
+button.delete:hover{
+    box-shadow: 0 0 5px #aaa;
+    /* background-color: whitesmoke; */
 }
 .todo-input{
     display: block;
@@ -26,7 +42,7 @@
     appearance: none;
     border: none;
     background-color: #f3f3f3;
-    margin-top: 15px;
+    margin-top: 45px;
     font-size: 20px;
     outline: none;
 }
@@ -40,8 +56,9 @@
     background: none;
     background-color: orange;
     color: #fff;
-    margin: 15px auto;
+    margin: 25px auto;
     padding: 10px 15px;
-    font-size: 18px;
+    font-size: 20px;
     font-weight: 700;
 }
+
