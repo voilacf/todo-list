@@ -15,6 +15,8 @@ export class TodosComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    //creating an array storing all entered todos
+    //TODO: Manage this in the back-end?
     this.todos = []
   }
 
