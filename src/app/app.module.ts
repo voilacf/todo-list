@@ -7,7 +7,7 @@ import { AppComponent } from './app.component';
 import { TodosComponent } from './components/todos/todos.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
-import { ContainerComponent } from './container/container.component'
+import { ContainerComponent } from './components/container/container.component'
 
 @NgModule({
   declarations: [
