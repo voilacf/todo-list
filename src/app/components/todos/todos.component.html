@@ -13,6 +13,7 @@
     <div  *ngFor="let todo of todos; let i = index;" class="todo {{(todo.completed ? 'done' : '')}}">
         <div class="id">{{i+1}}</div>
         <div class="content" (click)="toggleDone(i)">{{todo.content}}</div>
+        <button class="edit" (click)="editTodo(i)">edit</button>
         <button class="delete" (click)="deleteTodo(i)">remove</button>
     </div>
 </div>

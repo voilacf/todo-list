@@ -31,10 +31,19 @@ export class TodosComponent implements OnInit {
     this.todos = this.todos.filter((v,i) => i !== id);
   }
 
+  //Not the best solution -> uses the input above
+  editTodo(id: number){
+    this.todos.map((v,i)=>{
+      if(i==id) v.content = this.inputTodo;
+      return v;
+    })
+  }
+
   addTodo (){
     if(this.inputTodo === ""){
       alert('Please enter text');
-    }else{
+    }
+    else{
       this.todos.push({
         content: this.inputTodo,
         completed: false
