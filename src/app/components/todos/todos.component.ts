@@ -33,10 +33,13 @@ export class TodosComponent implements OnInit {
 
   //Not the best solution -> uses the input above
   editTodo(id: number){
+    if(this.inputTodo === ""){
+      alert('Please enter text above and press the button again');
+    }else{
     this.todos.map((v,i)=>{
       if(i==id) v.content = this.inputTodo;
       return v;
-    })
+    })}
   }
 
   addTodo (){
