@@ -8,7 +8,7 @@ import { todo } from './../../models/todo';
 })
 export class TodosComponent implements OnInit {
 
-  todos : todo[] = []; 
+  todos : todo[] = [];
 
   inputTodo:String = "";
 
@@ -17,7 +17,8 @@ export class TodosComponent implements OnInit {
   ngOnInit(): void {
     //creating an array storing all entered todos
     //TODO: Manage this in the back-end?
-    this.todos = []
+    //@ts-ignore
+    this.todos = JSON.parse(localStorage.getItem('todos'))|| [];
   }
 
   toggleDone (id: number) {
@@ -29,6 +30,7 @@ export class TodosComponent implements OnInit {
 
   deleteTodo(id: number){
     this.todos = this.todos.filter((v,i) => i !== id);
+    localStorage.setItem('todos',JSON.stringify(this.todos));
   }
 
   //Not the best solution -> uses the input above
@@ -36,10 +38,13 @@ export class TodosComponent implements OnInit {
     if(this.inputTodo === ""){
       alert('Please enter text above and press the button again');
     }else{
-    this.todos.map((v,i)=>{
+      this.todos.map((v,i)=>{
       if(i==id) v.content = this.inputTodo;
       return v;
-    })}
+      });
+      localStorage.setItem('todos',JSON.stringify(this.todos));
+    }
+
   }
 
   addTodo (){
@@ -50,7 +55,9 @@ export class TodosComponent implements OnInit {
       this.todos.push({
         content: this.inputTodo,
         completed: false
+
       });
+      localStorage.setItem('todos',JSON.stringify(this.todos));
       this.inputTodo = "";
     }
   }
